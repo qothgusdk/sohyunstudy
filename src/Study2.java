@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 class Calculator {
     int left, right;
     public void serOarands(int l,int r){
@@ -16,12 +18,23 @@ class SubstractionableCalculator extends Calculator{
         System.out.println(left-right);
     }
 }
+class MultiplicationableCalculator extends Calculator{
+    public void multiplication(){
+        System.out.println(left*right);
+    }
+}
+class DivisionableCalculator extends MultiplicationableCalculator{
+    public void division(){
+        System.out.println(left/right);
+    }
+}
 public class Study2 {
     public static void main(String[] args) {
-        SubstractionableCalculator a = new SubstractionableCalculator();
-        a.serOarands(10, 20);
+        DivisionableCalculator a = new DivisionableCalculator();
+        a.serOarands(20, 10);
         a.sum();
         a.avg();
-        a.substract();
+        a.multiplication();
+        a.division();
     }
 }
