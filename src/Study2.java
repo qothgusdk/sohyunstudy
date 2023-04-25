@@ -1,40 +1,29 @@
-import org.w3c.dom.ls.LSOutput;
-
-class Calculator {
+class Calculator{
     int left, right;
-    public void serOarands(int l,int r){
+    int third = 0;
+    public void setOprands(int l, int r){
         left = l;
         right = r;
     }
+    public void setOprands(int l, int r, int t){
+        this.setOprands(left, right);
+        third = t;
+    }
     public void sum(){
-        System.out.println(left+right);
+        System.out.println(left+right+third);
     }
-    public void  avg(){
-        System.out.println((left+right)/2);
-    }
-}
-class SubstractionableCalculator extends Calculator{
-    public void substract(){
-        System.out.println(left-right);
-    }
-}
-class MultiplicationableCalculator extends Calculator{
-    public void multiplication(){
-        System.out.println(left*right);
-    }
-}
-class DivisionableCalculator extends MultiplicationableCalculator{
-    public void division(){
-        System.out.println(left/right);
+    public void avg(){
+        System.out.println((left+right+third)/3);
     }
 }
 public class Study2 {
     public static void main(String[] args) {
-        DivisionableCalculator a = new DivisionableCalculator();
-        a.serOarands(20, 10);
+        Calculator a = new Calculator();
+        a.setOprands(10, 20);
         a.sum();
         a.avg();
-        a.multiplication();
-        a.division();
+        a.setOprands(10,20, 30);
+        a.sum();
+        a.avg();
     }
 }
