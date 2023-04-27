@@ -1,29 +1,24 @@
 class Calculator{
-    int left, right;
-    int third = 0;
-    public void setOprands(int l, int r){
+    private int left, right;
+    public void setOprands (int l, int r){
         left = l;
         right = r;
     }
-    public void setOprands(int l, int r, int t){
-        this.setOprands(left, right);
-        third = t;
+    private int sum(){
+        return left+right;
     }
-    public void sum(){
-        System.out.println(left+right+third);
+    public void sumDecoPlus () {
+        System.out.println("++++"+sum()+"++++");
     }
-    public void avg(){
-        System.out.println((left+right+third)/3);
+    public void sumDecoMinus () {
+        System.out.println("----"+sum()+"----");
     }
 }
-public class Study2 {
+public class Study2  {
     public static void main(String[] args) {
-        Calculator a = new Calculator();
-        a.setOprands(10, 20);
-        a.sum();
-        a.avg();
-        a.setOprands(10,20, 30);
-        a.sum();
-        a.avg();
+        Calculator x = new Calculator();
+        x.setOprands(10, 20);
+        x.sumDecoPlus();
+        x.sumDecoMinus();
     }
 }
