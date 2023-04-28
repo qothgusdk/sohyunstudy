@@ -4,6 +4,12 @@ abstract class Calculator{
         left = l;
         right = r;
     }
+    int _sum (){
+        return left+right;
+    }
+    int _avg (){
+        return (left+right)/2;
+    }
     public abstract void sum ();
     public abstract void  avg ();
     public void run () {
@@ -13,18 +19,18 @@ abstract class Calculator{
 }
 class CalculatorDecoPlus extends Calculator {
     public void sum(){
-        System.out.println(left+right);
+        System.out.println(_sum());
     }
     public void avg(){
-        System.out.println((left+right)/2);
+        System.out.println(_avg());
     }
 }
 class CalculatorDecoMinus extends Calculator {
     public void sum(){
-        System.out.println("- sum :"+(left+right) );
+        System.out.println("- sum :"+_sum());
     }
     public void avg(){
-        System.out.println("- avg :"+((left+right)/2));
+        System.out.println("- avg :"+_avg());
     }
 }
 public class Study2  {
